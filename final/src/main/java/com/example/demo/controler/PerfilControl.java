@@ -27,13 +27,11 @@ public class PerfilControl {
     public Perfil getPerfil(@PathVariable Long id){
         
         return perSer.mostrarPerfil(id);
-    
     }
     
     @PutMapping("editar/acercaDe/{id}")
     public Perfil editPerfil(@PathVariable Long id, @RequestBody Perfil per){
-        
-        
+                
         Perfil perfil = perSer.mostrarPerfil(id);
         
         perfil.setPhoto(per.getPhoto());
