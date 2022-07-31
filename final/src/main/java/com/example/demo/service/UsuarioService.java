@@ -1,6 +1,7 @@
 
 package com.example.demo.service;
 
+import com.example.demo.exception.ResourceNotFoundException;
 import com.example.demo.models.Usuario;
 import com.example.demo.repository.UsuarioJpa;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,7 @@ public class UsuarioService implements IUsuarioService{
     @Override
     public Usuario mostrarUser(Long id) {
         
-        return jpa.findById(id).orElse(null);
+        return jpa.findById(id).orElseThrow(() -> new ResourceNotFoundException("No se encontro ningun usuario"));
     }
 
     @Override

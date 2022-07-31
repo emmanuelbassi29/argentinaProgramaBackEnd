@@ -6,6 +6,7 @@ import com.example.demo.service.IPerfilService;
 import com.example.demo.service.ISocialService;
 import com.example.demo.service.IUsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,6 +27,7 @@ public class UsuarioControl {
     IPerfilService perSer;
     @Autowired
     ISocialService socialSer;
+
     @GetMapping("/check/{mail}/{password}")
     public long checkUser(@PathVariable String mail,@PathVariable String password){
     
@@ -48,11 +50,10 @@ public class UsuarioControl {
     }
     
    @GetMapping("/holis/{id}")
-   public Usuario getUser(@PathVariable long id){
+   public ResponseEntity<Usuario> getUser(@PathVariable long id){
    
-   return iuser.mostrarUser(id);
+   return ResponseEntity.ok(iuser.mostrarUser(id));
    }
-   
    @PostMapping("/register")
    public long nuevo(@RequestBody Usuario user){
       
@@ -75,8 +76,8 @@ public class UsuarioControl {
    iuser.crearUser(usuario);
    return usuario;
    }
-  
-   @GetMapping("buscar/user/{mail}")
+   
+   @GetMapping("/buscar/user/{mail}")
    public long buscarUser(@PathVariable String mail){
    
         long i;

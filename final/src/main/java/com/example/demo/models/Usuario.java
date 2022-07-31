@@ -22,10 +22,7 @@ public class Usuario {
     private String mail;
     private String password;
     
-    /*
-    @OneToMany(mappedBy = "Usuario")
-    private List<Experiencia> experiencia;
-    */
+  
     
     public Usuario (Long Id, String nombre, String profesion, String mail, String password) {this.Id = Id;
         this.nombre = nombre;

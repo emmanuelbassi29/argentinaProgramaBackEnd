@@ -1,6 +1,7 @@
 package com.example.demo.models;
 
 import javax.persistence.Basic;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,6 +18,7 @@ public class Perfil {
     private Long Id;
     @Basic
     private String descripcion;
+    @Column(length= 500)
     private String banner;
     private String photo;
     
