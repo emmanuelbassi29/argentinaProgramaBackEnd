@@ -80,10 +80,18 @@ public class UsuarioControl {
    @GetMapping("/buscar/user/{mail}")
    public long buscarUser(@PathVariable String mail){
    
-        long i;
+           long i;
        Usuario user = iuser.checkUser(mail);
-       i = user.getId();
-       return i;
+        
+        if(user != null){
+           
+           i = user.getId();
+           }
+           else {
+           i = 0;
+           }
+      
+        return i;
        
    
    }

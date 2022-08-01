@@ -5,7 +5,6 @@ import com.example.demo.models.Experiencia;
 import com.example.demo.models.Usuario;
 import com.example.demo.repository.ExperienciaJpa;
 import com.example.demo.repository.UsuarioJpa;
-import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

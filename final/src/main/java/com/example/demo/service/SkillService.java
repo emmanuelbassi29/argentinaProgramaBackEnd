@@ -44,7 +44,6 @@ public class SkillService implements ISkillService{
         skijpa.deleteById(id);
 
 
-// throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
  
     
